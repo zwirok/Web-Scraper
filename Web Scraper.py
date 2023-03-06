@@ -9,7 +9,7 @@ def get_items_list(url):
     response = requests.get(url)
     html_code = response.text
 
-    soup = BeautifulSoup(html_code, features='lxml')
+    soup = BeautifulSoup(html_code, features='html.parser')
     items_list = soup.find_all('li', {'class': 'col-xs-6 col-sm-4 col-md-3 col-lg-3'})
 
     return items_list
